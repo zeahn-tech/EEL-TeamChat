@@ -775,23 +775,6 @@ function nowTime(){ return new Date().toLocaleTimeString("en-US",{hour:"2-digit"
 
 var ACCOUNTS = [
   {id:"admin",name:"Admin",role:"Admin",password:"admin123"},
-  {id:"w1",name:"James Kollie",role:"Driver",password:"elite123"},
-  {id:"w2",name:"Martha Togba",role:"Dispatcher",password:"elite123"},
-  {id:"w3",name:"Emmanuel Wreh",role:"Warehouse Staff",password:"elite123"},
-  {id:"w4",name:"Fatima Kamara",role:"Driver",password:"elite123"},
-  {id:"w5",name:"Moses Dahn",role:"Accountant",password:"elite123"},
-  {id:"w6",name:"Grace Nyahn",role:"Customer Service",password:"elite123"},
-];
-
-var workers = [
-  {id:"w1",name:"James Kollie",role:"Driver",phone:"+231 770 001 001",status:"active",online:true},
-  {id:"w2",name:"Martha Togba",role:"Dispatcher",phone:"+231 770 002 002",status:"active",online:true},
-  {id:"w3",name:"Emmanuel Wreh",role:"Warehouse Staff",phone:"+231 770 003 003",status:"active",online:false},
-  {id:"w4",name:"Fatima Kamara",role:"Driver",phone:"+231 770 004 004",status:"active",online:true},
-  {id:"w5",name:"Moses Dahn",role:"Accountant",phone:"+231 770 005 005",status:"active",online:false},
-  {id:"w6",name:"Grace Nyahn",role:"Customer Service",phone:"+231 770 006 006",status:"blocked",online:false},
-];
-
 var groups = [
   {id:"g1",name:"All Staff",emoji:"🚛",members:["admin","w1","w2","w3","w4","w5","w6"]},
   {id:"g2",name:"Drivers Team",emoji:"🛣️",members:["admin","w1","w4"]},
