@@ -784,12 +784,35 @@ var ACCOUNTS = [
   {id:"w6",name:"Grace Nyahn",role:"Customer Service",password:"elite123"},
 ];
 
+var workers = [
+  {id:"w1",name:"James Kollie",role:"Driver",phone:"+231 770 001 001",status:"active",online:true},
+  {id:"w2",name:"Martha Togba",role:"Dispatcher",phone:"+231 770 002 002",status:"active",online:true},
+  {id:"w3",name:"Emmanuel Wreh",role:"Warehouse Staff",phone:"+231 770 003 003",status:"active",online:false},
+  {id:"w4",name:"Fatima Kamara",role:"Driver",phone:"+231 770 004 004",status:"active",online:true},
+  {id:"w5",name:"Moses Dahn",role:"Accountant",phone:"+231 770 005 005",status:"active",online:false},
+  {id:"w6",name:"Grace Nyahn",role:"Customer Service",phone:"+231 770 006 006",status:"blocked",online:false},
+];
+
 var groups = [
   {id:"g1",name:"All Staff",emoji:"🚛",members:["admin","w1","w2","w3","w4","w5","w6"]},
   {id:"g2",name:"Drivers Team",emoji:"🛣️",members:["admin","w1","w4"]},
   {id:"g3",name:"Operations",emoji:"📦",members:["admin","w2","w3","w5"]},
 ];
-  
+
+var messages = {
+  g1:[
+    {id:"m1",sid:"admin",sname:"Admin",text:"Good morning team! Today\'s routes are confirmed.",time:"08:00",type:"text"},
+    {id:"m2",sid:"w1",sname:"James Kollie",text:"Good morning! Ready to roll. Truck is loaded.",time:"08:05",type:"text"},
+    {id:"m3",sid:"w2",sname:"Martha Togba",text:"Dispatch board is clear. All deliveries assigned.",time:"08:10",type:"text"},
+    {id:"m4",sid:"w4",sname:"Fatima Kamara",text:"On my way to Route B. ETA 30 minutes.",time:"08:15",type:"text"},
+  ],
+  g2:[
+    {id:"m5",sid:"admin",sname:"Admin",text:"Drivers, please confirm vehicle checks before departure.",time:"07:50",type:"text"},
+    {id:"m6",sid:"w1",sname:"James Kollie",text:"✅ Truck EXL-001 — all clear!",time:"07:55",type:"text"},
+  ],
+  g3:[],
+};
+
 var unread = {g2:1,g3:2};
 var offlineQueue = [];
 var pendingAtts = [];
