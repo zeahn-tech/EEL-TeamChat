@@ -925,7 +925,97 @@ label.icon-btn:active{opacity:.7}
 
 <!-- Message context menu (injected dynamically) -->
 <div id="msg-ctx-menu" class="msg-ctx-menu" style="display:none"></div>
-
+<script>
+  // ════════════════════════════════════════════════════════════════════════
+  // CORE APP INITIALIZATION & AUTHENTICATION
+  // ════════════════════════════════════════════════════════════════════════
+  
+  let currentUser = null;
+  let currentGroup = null;
+  let allGroups = {};
+  
+  // Screen navigation
+  function goToLogin() {
+    document.getElementById('screen-splash').classList.remove('active');
+    document.getElementById('screen-login').classList.add('active');
+  }
+  
+  function goToApp() {
+    document.getElementById('screen-login').classList.remove('active');
+    document.getElementById('screen-app').classList.add('active');
+  }
+  
+  // Login handler
+  document.getElementById('btn-login').addEventListener('click', () => {
+    const name = document.getElementById('inp-user').value.trim();
+    const pass = document.getElementById('inp-pass').value.trim();
+    
+    if (!name || !pass) {
+      document.getElementById('login-error').style.display = 'block';
+      return;
+    }
+    
+    // Simple auth (replace with real backend)
+    currentUser = { name, role: 'worker' };
+    goToApp();
+    loadUI();
+  });
+  
+  function logout() {
+    currentUser = null;
+    currentGroup = null;
+    document.getElementById('screen-app').classList.remove('active');
+    document.getElementById('screen-splash').classList.add('active');
+  }
+  
+  // ════════════════════════════════════════════════════════════════════════
+  // GROUP & WORKER MANAGEMENT
+  // ════════════════════════════════════════════════════════════════════════
+  
+  function openGroupModal() {
+    // Show modal (you'll need to create this modal in HTML)
+    alert('Group modal - implement this');
+  }
+  
+  function switchTab(tab) {
+    document.querySelectorAll('.s-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(`tab-${tab}`).classList.add('active');
+  }
+  
+  function toggleAdmin() {
+    // Toggle admin panel
+    alert('Admin panel - implement this');
+  }
+  
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+  
+  function loadUI() {
+    const myName = document.getElementById('my-name');
+    const myRole = document.getElementById('my-role');
+    const myAv = document.getElementById('my-av');
+    
+    if (currentUser) {
+      myName.textContent = currentUser.name;
+      myRole.textContent = currentUser.role;
+      myAv.textContent = currentUser.name.charAt(0);
+      myAv.style.background = '#D4A017';
+      myAv.style.color = '#fff';
+    }
+  }
+  
+  // Initialize on load
+  window.addEventListener('DOMContentLoaded', () => {
+    // App starts on splash screen
+  });
+</script>
+</body>
+</html>
 <script>
 // ═══════════════════════════════════════════════════════════════════════════════
 // ELITE EXPRESS LOGISTICS — TEAM CHAT APP
